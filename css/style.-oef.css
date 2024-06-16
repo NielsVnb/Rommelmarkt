@@ -1,0 +1,107 @@
+.container{
+    display : grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: min-content min-content 1fr;
+    gap: 10px;
+    grid-template-areas:
+        "header header" 
+        "leftside overview"
+        "details overview";
+}
+
+#overview{
+    grid-area : overview;
+    border : 2px solid black;
+    display : flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+}
+
+#overview div{
+    margin: 10px;
+}
+
+h1{
+    grid-area: header;
+}
+
+.side-left{
+    grid-area: leftside;
+    border: 2px solid black; 
+    border-radius: 5px; 
+    padding-bottom: 20px;
+}
+
+.details{
+    grid-area : details;
+    border : 2px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    height: min-content;
+}
+
+.detailhdr{
+    color : royalblue;
+    text-align: center;
+    padding-top: 2px;  
+    text-align: center;
+    margin: 0;  
+}
+
+.details p{
+    margin: 0; 
+}
+
+.bg-crimson{
+ background-color: crimson;
+}
+
+.bg-deepsky-blue{
+    background-color: deepskyblue;
+}
+
+img{
+    width: 200px;
+    height: 150px;
+    object-fit: contain;
+}
+
+div#overview > div{
+    height: 360px;
+    width: 200px;
+    border: 1px solid black;
+}
+
+div#overview > div > h2{
+    height: 130px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+div#overview > div > p{
+    text-align: center;
+}
+
+
+@media screen and (max-width:651px) {
+    .container {
+        display : grid;
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: min-content min-content 1fr;
+        gap: 10px;
+        grid-template-areas:
+            "header header" 
+            "leftside details"
+            "overview overview";
+    }
+
+    div#overview > div{
+        width: 180px;
+        margin: 5px;
+    }
+
+    div#overview > div > img{
+        width: 180px;
+    }
+    
+}
