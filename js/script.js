@@ -113,7 +113,7 @@ function getName(ding) {
 function getDingImage(ding) {
     const imgding = document.createElement("img");
     let dingImage;
-    dingImage = `../img/${ding.image}`;
+    dingImage = `img/${ding.image}`;
     imgding.setAttribute("src", dingImage);
     return imgding;
 }
