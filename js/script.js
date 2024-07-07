@@ -3,7 +3,7 @@
 let slccategorie, slcSort;
 let divOverview, divDetails;
 let dingen = [];
-const sortingOptions = ["categorie", "houden", "prijs"];
+const sortingOptions = ["name", "categorie", "keep", "price"];
 const details = ["Age", "Job", "Quote", "Voice"];
 
 window.addEventListener("load", initialize);
@@ -94,13 +94,15 @@ function sortdings() {
 
 function getdingboxes() {
     dingen.forEach(ding => {
-        const divding = document.createElement("div");
+        if(!ding.SOLD){
+            const divding = document.createElement("div");
 
-        divding.appendChild(getName(ding));
-        divding.appendChild(getDingImage(ding));
-        divding.appendChild(getInfo(ding));
-        divding.setAttribute("id", ding.firstname);
-        divOverview.appendChild(divding);
+            divding.appendChild(getName(ding));
+            divding.appendChild(getDingImage(ding));
+            divding.appendChild(getInfo(ding));
+            divding.setAttribute("id", ding.firstname);
+            divOverview.appendChild(divding);
+        }
     });
 }
 
